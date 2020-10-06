@@ -364,7 +364,7 @@ class AdminSearchConfControllerCore extends AdminController
 
     public function initPageHeaderToolbar()
     {
-        if (empty($this->display)) {
+        if ($this->display == 'list' || empty($this->display)) {
             $this->page_header_toolbar_btn['new_alias'] = [
                 'href' => self::$currentIndex . '&addalias&token=' . $this->token,
                 'desc' => $this->trans('Add new alias', [], 'Admin.Shopparameters.Feature'),
